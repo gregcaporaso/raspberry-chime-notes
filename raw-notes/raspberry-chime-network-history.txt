@@ -1,0 +1,51 @@
+    1  cat ~/.zshrc.pre-oh-my-zsh
+    2  cat ~/.zshrc
+    3  vim .zshrc
+    4  omz reload 
+    5  conda 
+    6  conda activate raspberry-chime
+    7  qiime 
+    8  source tab-qiime
+    9  ls
+   10  qiime info
+   11  shutdown -h now 
+   12  sudo shutdown -h now 
+   13  ls
+   14  nmcli device
+   15  ls
+   16  nmcli --help
+   17  nmcli d --help
+   18  nmcli d show
+   19  ls
+   20  htop
+   21  ls
+   22  exit
+   23  ls
+   24  sudo nmcli device wifi hotspot ssid raspberry-chime password acgtacgt ifname wlan0
+   25  nmcli connection
+   26  nmcli connection show 4366703b-9777-46c7-a91e-52aca1d81560
+   27  nmcli connection 
+   28  nmcli connection show 4366703b-9777-46c7-a91e-52aca1d81560
+   29  sudo nmcli connection modify 4366703b-9777-46c7-a91e-52aca1d81560 connection.autoconnect yes connection.autoconnect-priority 100
+   30  nmcli connection show 4366703b-9777-46c7-a91e-52aca1d81560
+   31  nmcli
+   32  nmcli --help
+   33  nmcli n --help
+   34  nmcli g --help
+   35  nmcli g status 
+   36  nmcli device
+   37  nmcli device wlan0
+   38  ls
+   39  sudo ufw
+   40  sudo apt-get install ufw
+   41  sudo ufw allow 80 
+   42  sudo ufw allow 22
+   43  sudo ufw enable
+   44  ls
+   45  conda activate raspberry-chime
+   46  vim ~/.zshrc
+   47  exit
+   48  ls
+   49  htop
+   50  ping 8.8.8.8
+   51  history 

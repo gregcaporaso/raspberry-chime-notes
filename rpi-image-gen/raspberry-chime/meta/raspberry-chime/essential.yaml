@@ -1,0 +1,34 @@
+name: raspberry-chime-essential
+mmdebstrap:
+#  setup-hooks:
+    # Could perform chroot ops here prior to pkg download/extract
+#  essential-hooks:
+    # Could perform chroot ops here prior to installing non-essential pkgs
+  customize-hooks:
+    # Install miniforge
+    - chroot $1 sh -c "wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-aarch64.sh"
+    - chroot $1 sh -c "bash Miniforge3-Linux-aarch64.sh -b -p $IGconf_miniforge_root"
+    # Create miniforge group and add user1
+    - chroot $1 sh -c "groupadd $IGconf_miniforge_group"
+    - chroot $1 sh -c "chgrp -R $IGconf_miniforge_group $IGconf_miniforge_root"
+    - chroot $1 sh -c "chmod 770 -R $IGconf_miniforge_root"
+    - chroot $1 sh -c "adduser $IGconf_device_user1 $IGconf_miniforge_group"
+    # Install the Framework
+    - chroot $1 sh -c "/opt/miniforge3/bin/conda create --yes -n raspberry-chime \"python=3.10\" \"scipy=1.13.0\" \"pandas=2.2.2\" \"numpy=1.26.4\""
+    #- chroot $1/home/$IGconf_device_user1/ sh -c "conda activate raspberry-chime"
+    #pip install pyyaml "decorator>=4,<5"  "tzlocal<3"  python-dateutil  bibtexparser  "networkx==3.1"  dill  psutil  flufl.lock  "parsl==2024.4.15"  appdirs  tomlkit  lxml click jinja2 "scikit-bio==0.6.2"
+    #pip install https://github.com/qiime2/qiime2/archive/refs/heads/dev.zip
+    #pip install https://github.com/qiime2/q2cli/archive/refs/heads/dev.zip
+    #pip install https://github.com/qiime2/q2templates/archive/refs/heads/dev.zip
+    #touch /home/$IGconf_device_user1/miniforge3/envs/raspberry-chime/etc/qiime2_config.toml
+  cleanup-hooks:
+    - chroot $1 sh -c "rm Miniforge3-Linux-aarch64.sh"
+    # Could perform chroot ops here when cleaning up
+  packages:
+    - build-essential
+    - autoconf
+    - automake
+    - libtool
+    - flex
+    - bison
+    - vim

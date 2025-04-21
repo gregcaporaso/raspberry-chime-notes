@@ -1,0 +1,1 @@
+The files in this directory contain shell history and other misc notes from my first manual build.

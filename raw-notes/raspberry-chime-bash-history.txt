@@ -1,0 +1,76 @@
+    1  htop
+    2  ls
+    3  touch ~/Desktop/hello.txt
+    4  rm ~/Desktop/hello.txt 
+    5  sudo apt update 
+    6  sudo apt full-upgrade 
+    7  sudo reboot --now 
+    8  sudo reboot
+    9  apt install transmission 
+   10  sudo apt install transmission 
+   11  ls /
+   12  ls afp://eggs.local/tuf-storage
+   13  ls 
+   14  ls /
+   15  ls /mnt/
+   16  ls /home/jgc/Desktop/tuf-storage
+   17  ls -al /home/jgc/Desktop/tuf-storage
+   18  showmount -e 192.168.1.2
+   19  # sudo mount -t nfs 192.168.1.2:/tuf-storage /mnt/tuf-storage
+   20  mkdir /mnt/tuf-storage
+   21  sudo mkdir /mnt/tuf-storage
+   22  sudo mount -t nfs 192.168.1.2:/tuf-storage /mnt/tuf-storage
+   23  rm ~/.config/transmission/resume/2bb935a85e448dd7fa5e0eeec4dd52be383b2abb.resume 
+   24  df -kh 
+   25  ipconfig
+   26  ifconfig
+   27  passwd
+   28  sudo rpi-imager
+   29  ls
+   30  ls Downloads/
+   31  ls Documents/
+   32  ls Bookshelf/
+   33  ls
+   34  bash Miniforge3-$(uname)-$(uname -m).sh
+   35  wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-aarch64.sh
+   36  source ~/.bashrc 
+   37  conda env create -n raspberry-chime python=3.10 scipy=1.13.0 pandas=2.2.2 numpy=1.26.4 
+   38  conda env create -n raspberry-chime python=3.10  
+   39  exit
+   40  conda env create -n raspberry-chime python=3.10  
+   41  conda create -n raspberry-chime python=3.10 scipy=1.13.0 pandas=2.2.2 numpy=1.26.4
+   42  conda activate raspberry-chime
+   43  pip install pyyaml decorator>=4,<5  tzlocal<3  python-dateutil  bibtexparser  networkx=3.1  dill  psutil  flufl.lock  parsl 2024.4.15  appdirs  tomlkit  lxml
+   44  pip install pyyaml "decorator>=4,<5"  "tzlocal<3"  python-dateutil  bibtexparser  "networkx=3.1"  dill  psutil  flufl.lock  "parsl=2024.4.15"  appdirs  tomlkit  lxml
+   45  pip install pyyaml "decorator>=4,<5"  "tzlocal<3"  python-dateutil  bibtexparser  "networkx==3.1"  dill  psutil  flufl.lock  "parsl==2024.4.15"  appdirs  tomlkit  lxml
+   46  mkdir 4-git-repos
+   47  cd 4-git-repos/
+   48  mkdir qiime2
+   49  cd qiime2/
+   50  git@github.com:qiime2/qiime2.git
+   51  git clone 
+   52  git clone git@github.com:qiime2/qiime2.git
+   53  pip install https://github.com/qiime2/qiime2/archive/refs/heads/dev.zip
+   54  pip install https://github.com/qiime2/q2cli/archive/refs/heads/dev.zip
+   55  pip install https://github.com/qiime2/q2-metadata/archive/refs/heads/dev.zip
+   56  qiime info 
+   57  conda install click 
+   58  qiime info 
+   59  conda install jinja2
+   60  pip install https://github.com/qiime2/q2templates/archive/refs/heads/dev.zip
+   61  qiime info 
+   62  pip install "scikit-bio==0.6.2"
+   63  qiime info 
+   64  pip uninstall q2-metadata
+   65  qiime info 
+   66  touch /home/jgc/miniforge3/envs/raspberry-chime/etc/qiime2_config.toml
+   67  ls /home/jgc/miniforge3/envs/raspberry-chime/etc/
+   68  ls /home/jgc/miniforge3/envs/raspberry-chime/
+   69  ipython 
+   70  python 
+   71  mkdir /home/jgc/.config/qiime2
+   72  touch /home/jgc/.config/qiime2/qiime2_config.toml
+   73  qiime info 
+   74  conda list 
+   75  conda list > ~/raspberry-chime-conda-list.txt
+   76  history > ~/raspberry-chime-bash-history.txt

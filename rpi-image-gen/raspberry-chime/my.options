@@ -1,0 +1,24 @@
+# Comments are supported
+# All variables will be translated to lower case and made available to hooks
+# Variables set in the .cfg file can be overridden
+
+image_name=raspberry-chime
+device_hostname=raspberry-chime
+
+# TODO: update the username and password
+# It's a good idea to change your password the first time you log in to your
+# new device so it bears no relationship to a password that you have stored in
+# plain-text (i.e., the one in this file).
+device_user1=qiime2
+device_user1pass=qiime2
+device_ssh_user1=y
+
+device_keyboard_keymap=us
+device_keyboard_layout="English (US)"
+device_locale1=en_US.UTF-8
+device_timezone=America/Phoenix
+device_timezone_area=America
+device_timezone_city=Phoenix
+
+miniforge_root=/opt/miniforge3/
+miniforge_group=miniforge3

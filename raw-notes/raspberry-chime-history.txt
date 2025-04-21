@@ -1,0 +1,16 @@
+    1  conda init
+    2  miniforge3/condabin/conda init
+    3  conda 
+    4  miniforge3/condabin/conda info -e 
+    5  vim .zshrc
+    6  miniforge3/condabin/conda init zsh 
+    7  exit
+    8  conda info -e 
+    9  conda activate raspberry-chime
+   10  qiime
+   11  vim ~/.zshrc
+   12  source ~/.zshrc
+   13  ls
+   14  rm -r '=4,'
+   15  ls
+   16  ls

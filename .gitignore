@@ -1,0 +1,5 @@
+.DS_Store
+
+notes/_build/
+notes/data/
+notes/_static/environment.yml

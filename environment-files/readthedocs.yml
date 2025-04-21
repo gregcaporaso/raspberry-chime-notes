@@ -1,0 +1,7 @@
+channels:
+- conda-forge
+dependencies:
+  - nodejs
+  - pip
+  - pip:
+    - jupyter-book>=2.0.0a1
