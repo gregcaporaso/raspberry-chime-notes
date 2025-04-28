@@ -1,8 +1,8 @@
-# Raspberry Chime build notes
+# Raspberry Chime notes
 
-[![Copier](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/copier-org/copier/master/img/badge/badge-grayscale-inverted-border-orange.json)](https://github.com/copier-org/copier)
+This repository contains the source for [my *Raspberry Chime notes*](https://raspberry-chime-notes.readthedocs.io/en/latest/).
 
-## Development instructions
+## Development instructions (editing this documentation)
 
 The following sub-sections illustrate how to develop this documentation.
 

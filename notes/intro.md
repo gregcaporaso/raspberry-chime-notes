@@ -44,6 +44,8 @@ sudo ./install_deps.sh
 
 ## Build
 
+You can look at the build files specified in the following build command [here](https://github.com/gregcaporaso/raspberry-chime-notes/tree/main/rpi-image-gen/raspberry-chime).
+
 From the top-level directory of the `rpi-image-gen` repository, run the following command.
 This will take a while (up to an hour).
 
