@@ -10,8 +10,9 @@ device_hostname=raspberry-chime
 # new device so it bears no relationship to a password that you have stored in
 # plain-text (i.e., the one in this file).
 device_user1=qiime2
-device_user1pass=qiime2
-device_ssh_user1=y
+device_user1pass=2emiiq
+# device_ssh_user1=y
+# meta_ssh_pubkey_user1=
 
 device_keyboard_keymap=us
 device_keyboard_layout="English (US)"
