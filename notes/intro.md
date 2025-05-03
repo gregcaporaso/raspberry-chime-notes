@@ -12,13 +12,13 @@ Are you looking for:
 - learning resources for microbiome metagenome analysis? See the [MOSHPIT documentation](https://moshpit.readthedocs.io).
 - installation instructions, plugins, books, videos, workshops, or resources? See the [QIIME 2 Library](https://library.qiime2.org).
 - general help? See the [QIIME 2 Forum](https://forum.qiime2.org)
-- information about the author? See [ https://cap-lab.bio](https://cap-lab.bio).
+- information about the authors? See [https://cap-lab.bio](https://cap-lab.bio).
 
 Otherwise, if you're specifically interested in *Raspberry Chime*, you're in the right place.
 Read on... 📖
 :::
 
-This is a weekend experiment focused on installing the QIIME 2 Framework on a Raspberry Pi 5.
+This is a weekend experiment focused on installing the QIIME 2 Framework on a Raspberry Pi 5 (i.e., making a Raspberry Chime).
 It is organized just as rough notes: no promises that it works (i.e., "if it breaks, you get to keep both parts").
 
 The following steps are intended to be performed on a Raspberry Pi 5 computer running Raspberry Pi OS.
@@ -31,7 +31,7 @@ git clone https://github.com/gregcaporaso/raspberry-chime-notes
 ```
 
 Edit the `raspberry-chime-notes/rpi-image-gen/raspberry-chime/my.options` file to update the following values:
-- `device_user1` : the user name you'd like to use
+- `device_user1` : the user name you'd like to use on the Raspberry Chime
 - `device_user1pass` : the password you'd like to use for `device_user1` [^change-your-password]
 
 ## Clone and install [`rpi-image-gen`](https://github.com/raspberrypi/rpi-image-gen)
@@ -65,8 +65,8 @@ Replace `/dev/sda` with the path of the SD card you're writing the image to (be 
 :::{tip}
 Use `lsblk -p` to see the available disks.
 You're looking for entries where `TYPE` is `disk`.
-Use the `SIZE` column as a guide.
-If in doubt, run this command before attaching the drive, and then run it again after attaching the drive.
+Use the `SIZE` column as a guide to find the SD card you want to write to.
+If in doubt, run `lsblk -p` before attaching the drive, and then run it again after attaching the drive.
 Compare the results to see what new disk became available when you attached the drive.
 :::
 
@@ -85,4 +85,4 @@ Have fun!
 
  *Raspberry Chime* (©2025) by [Greg Caporaso](https://cap-lab.bio) is licensed under [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/deed.en).
 
-[^change-your-password]: It's a good idea to change your password the first time you log in to your new device so it bears no relationship to a password that you have stored in plain-text (i.e., the one in this file).
+[^change-your-password]: It's a good idea to change your password the first time you log in to your new device so it bears no relationship to a password that you have stored in plain-text (i.e., the one in your `my.options` file).

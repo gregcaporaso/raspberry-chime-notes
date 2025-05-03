@@ -1,0 +1,44 @@
+channels:
+- https://packages.qiime2.org/qiime2/2025.4/tiny/released
+- conda-forge
+- bioconda
+dependencies:
+- python=3.10.17
+- scipy=1.13.0
+- pandas=2.2.2
+- numpy=1.26.4
+- pyyaml=6.0.2
+- decorator=4.4.2
+- tzlocal=2.1
+- ipykernel=6.29.5
+- ipython=8.21.0
+- ipython_genutils=0.2.0
+- bibtexparser
+- networkx=3.1
+- dill=0.4.0
+- psutil=7.0.0
+- flufl.lock=8.1.0
+- parsl=2024.4.15
+- appdirs
+- tomlkit=0.13.2
+- lxml=5.4.0
+- click=8.1.8
+- jinja2=3.1.6
+- biom-format=2.1.16
+- scikit-bio=0.6.2
+- scikit-learn=1.4.2
+- jupyter_client=7.4.9
+- jupyter_core=5.7.2
+- jupyter_events=0.12.0
+- jupyter_server=2.15.0
+- jupyter_server_terminals=0.5.3
+- jupyterlab_pygments=0.3.0
+- jupyterlab
+- pip
+- pip:
+  - hdmedians
+  - jupyter-book>=2.0.0a1
+  - qiime2@git+https://github.com/qiime2/qiime2.git@dev
+  - q2cli@git+https://github.com/qiime2/q2cli.git@dev
+  - q2templates@git+https://github.com/qiime2/q2templates.git@dev
+

@@ -5,7 +5,8 @@ project:
   title: Raspberry Chime Notes
   # description:
   keywords: ["QIIME", "QIIME 2", "microbiome", "metagenome", "raspberry pi"]
-  # uncommenting "authors" will put the author list on every page
+  # uncommenting "authors" will put the author list on every page.
+  # it's a little much.
   # authors: ["Caporaso Lab"]
   # github:
   references:
