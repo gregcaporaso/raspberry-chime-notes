@@ -16,7 +16,7 @@ mmdebstrap:
     # Install the Framework
     - chroot $1 sh -c "/opt/miniforge3/bin/conda env create --yes -n raspberry-chime --file https://raw.githubusercontent.com/gregcaporaso/raspberry-chime-notes/refs/heads/main/rpi-image-gen/raspberry-chime/environment-files/environment.yml"
     #- chroot $1/home/$IGconf_device_user1/ sh -c "conda activate raspberry-chime"
-    - chroot $1 sh -c "touch /home/$IGconf_device_user1/miniforge3/envs/raspberry-chime/etc/qiime2_config.toml"
+    #- chroot $1 sh -c "touch /home/$IGconf_device_user1/miniforge3/envs/raspberry-chime/etc/qiime2_config.toml"
   cleanup-hooks:
     - chroot $1 sh -c "rm Miniforge3-Linux-aarch64.sh"
     # Could perform chroot ops here when cleaning up
