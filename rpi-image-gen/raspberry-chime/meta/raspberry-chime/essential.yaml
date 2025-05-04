@@ -28,3 +28,10 @@ mmdebstrap:
     - flex
     - bison
     - vim
+    - git
+    - firefox-esr
+    - rclone
+    - tmux
+    - ufw
+    - links2
+    - cowsay
