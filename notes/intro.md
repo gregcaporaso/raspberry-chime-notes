@@ -23,44 +23,75 @@ It is organized just as rough notes: no promises that it works (i.e., "if it bre
 
 The following steps are intended to be performed on a Raspberry Pi 5 computer running Raspberry Pi OS.
 `sudo` access is required.
+You should have greater than ~20GB of disk space available in the location where you perform this work to ensure that you have enough space for the disk image files that will be created.
 
-## Clone this repository
+## Using `pi-gen`
 
-```shell
-git clone https://github.com/gregcaporaso/raspberry-chime-notes
-```
-
-Edit the `raspberry-chime-notes/rpi-image-gen/raspberry-chime/my.options` file to update the following values:
-- `device_user1` : the user name you'd like to use on the Raspberry Chime
-- `device_user1pass` : the password you'd like to use for `device_user1` [^change-your-password]
-
-## Clone and install [`rpi-image-gen`](https://github.com/raspberrypi/rpi-image-gen)
+### Clone `pi-gen` and install its dependencies
 
 ```shell
-git clone https://github.com/raspberrypi/rpi-image-gen
-cd rpi-image-gen
-sudo ./install_deps.sh
+git clone -b raspberry-chime https://github.com/gregcaporaso/pi-gen
 ```
 
-## Build
+Follow the installation instructions for installing the dependencies in the top-level README (also available [here](https://github.com/gregcaporaso/pi-gen/tree/raspberry-chime?tab=readme-ov-file#dependencies)).
 
-You can look at the build files specified in the following build command [here](https://github.com/gregcaporaso/raspberry-chime-notes/tree/main/rpi-image-gen/raspberry-chime).
+You can find the QIIME 2-relevant bits in the `pi-gen/stage4/42-qiime2` directory (also [here](https://github.com/gregcaporaso/pi-gen/tree/raspberry-chime/stage4/42-qiime2)).
 
-From the top-level directory of the `rpi-image-gen` repository, run the following command.
+### Create a `config` file
+
+In your top-level `pi-gen` directory, create a file called `config`.
+You can fill it in based on the information in the README ([here](https://github.com/gregcaporaso/pi-gen/tree/raspberry-chime?tab=readme-ov-file#config)).
+
+A simple example that you can build from looks like the following:
+
+```
+IMG_NAME=raspberry-chime
+PI_GEN_RELEASE="Raspberry Chime"
+TARGET_HOSTNAME=raspberry-chime
+
+LOCALE_DEFAULT=en_US.UTF-8
+KEYBOARD_KEYMAP=us
+KEYBOARD_LAYOUT="English (US)"
+TIMEZONE_DEFAULT="America/Phoenix"
+WPA_COUNTRY=US
+
+# TODO: update the username and password
+# It's a good idea to change your password the first time you log in to your
+# new device so it bears no relationship to a password that you have stored in
+# plain-text (i.e., the one in this file).
+FIRST_USER_NAME=REDACTED - ADD YOUR OWN
+FIRST_USER_PASS=REDACTED - ADD YOUR OWN
+ENABLE_SSH=1
+#PUBKEY_SSH_FIRST_USER=
+#PUBKEY_ONLY_SSH=1
+```
+
+### Disable build stage 5, optionally
+
+After reading about the different build stages, consider whether you want to skip any.
+I skip stage5 by running the following command from the `pi-gen` directory before build:
+
+```
+touch ./stage5/SKIP ./stage5/SKIP_IMAGES
+```
+
+### Build!
+
+From the `pi-gen` directory, run the following:
+
+```shell
+sudo ./build.sh
+```
+
+This will take a while - maybe an hour or so.
+
+### Create image
+
+From the top-level directory of the `pi-gen` repository, run the following command.
 This will take a while (up to an hour).
 
-```shell
-./build.sh \
- -c raspberry-chime \
- -D $HOME/raspberry-chime-notes/rpi-image-gen/raspberry-chime/ \
- -o $HOME/raspberry-chime-notes/rpi-image-gen/raspberry-chime/my.options
-```
-
-## Create image
-
-From the top-level directory of the `rpi-image-gen` repository, run the following command.
-This will take a while (up to an hour).
 Replace `/dev/sda` with the path of the SD card you're writing the image to (be sure you pick the right one - all content on that card will be overwritten).
+Replace the image file name with the one your build created (it will look something like `2025-05-05-raspberry-chime.img`)
 
 :::{tip}
 Use `lsblk -p` to see the available disks.
@@ -72,7 +103,7 @@ Compare the results to see what new disk became available when you attached the 
 
 ```shell
 sudo rpi-imager \
- --cli work/raspberry-chime/artefacts/raspberry-chime.img \
+ --cli work/raspberry-chime/export_image/2025-05-05-raspberry-chime.img \
  /dev/sda
 ```
 
